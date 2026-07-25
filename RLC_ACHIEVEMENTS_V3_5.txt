@@ -1,0 +1,6 @@
+Red Lobster Cult Achievements v3.5
+
+- Migrates existing equipped titles from old long names to their stable title IDs.
+- Repairs legacy selected-title records saved as strings or older table shapes.
+- Forces current-title, title-list, tooltip, announcement, and guild-chat display to use the short title name.
+- Keeps all earned achievements, title unlocks, and equipped-title choices intact.

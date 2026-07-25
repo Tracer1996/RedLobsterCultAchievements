@@ -1,0 +1,17 @@
+## Interface: 11200
+## Title: Red Lobster Cult Achievements
+## Notes: Achievement and title companion for Red Lobster Cult
+## Version: 3.5
+## Dependencies: RedLobsterCult
+## SavedVariablesPerCharacter: RLC_AchievementsDB
+data\RLC_ConsumablesDB.lua
+RedLobsterCultAchievements.lua
+data\RLC_Ach_Kills.lua
+data\RLC_Ach_Skills.lua
+data\RLC_Ach_Identity.lua
+data\RLC_Ach_Roleplay.lua
+data\RLC_Ach_Reputation.lua
+data\RLC_Ach_Quests.lua
+data\RLC_Ach_QuestRewards.lua
+data\RLC_Ach_Companions.lua
+data\RLC_Ach_Probe.lua

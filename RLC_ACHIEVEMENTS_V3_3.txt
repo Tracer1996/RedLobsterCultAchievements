@@ -1,0 +1,11 @@
+RED LOBSTER CULT ACHIEVEMENTS v3.3
+
+- Converted the addon identity to RedLobsterCultAchievements.
+- Uses its own RLC_AchievementsDB per-character SavedVariables.
+- Requires and integrates directly with RedLobsterCult.
+- Uses the RLCAch guild-sync prefix registered by the base addon.
+- Supplies achievement points, recent achievements, titles, metadata, and boss progress to the Red Lobster Cult dossier.
+- Uses Red Lobster Cult clickable achievement links and refresh hooks.
+- Updated minimap labeling, slash commands, UI title, paths, and officer checks.
+
+Open the achievement window with /achievements or /rlcach.

@@ -1,0 +1,6 @@
+RED LOBSTER CULT ACHIEVEMENTS v3.4
+
+- Reworked all 131 achievement titles into compact chat-friendly names.
+- Every title is now 12 characters or fewer.
+- Title IDs, requirements, earned titles, and equipped selections are preserved.
+- Updated legendary announcements to use the new short title names.
