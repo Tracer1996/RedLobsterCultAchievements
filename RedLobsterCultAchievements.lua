@@ -130,10 +130,10 @@ local function IsOfficerRank(rankName)
   if CanEditOfficerNote and CanEditOfficerNote() then return true end
   if CanGuildInvite and CanGuildInvite() then return true end
   local normalized = NormalizeGuildRankName(rankName)
-  return normalized == "flame"
-    or normalized == "flame keeper"
-    or normalized == "banner warden"
-    or normalized == "oath captain"
+  return normalized == "crab"
+    or normalized == "lobster knight"
+    or normalized == "tong bender"
+    or normalized == "leviathan"
 end
 
 local function ResolveGuildMemberName(name)
@@ -805,12 +805,12 @@ local ACHIEVEMENTS = {
   casual_mount_60={id="casual_mount_60",name="First Mount",desc="Obtain your first mount",category="Casual",points=10,icon="Interface\\Icons\\Ability_Mount_Raptor"},
   casual_hearthstone_use={id="casual_hearthstone_use",name="Frequent Traveler",desc="Use your hearthstone 50 times",category="Casual",points=10,icon="Interface\\Icons\\INV_Misc_Rune_01"},
   casual_guild_join={id="casual_guild_join",name="Guild Member",desc="Join a guild",category="Casual",points=5,icon="Interface\\Icons\\INV_Shirt_GuildTabard_01"},
-  guild_rank_member_born={id="guild_rank_member_born",name="Member: Born",desc="Attain the guild rank of Member: Born in Red Lobster Cult.",category="Guild",points=5,icon="Interface\\Icons\\INV_Shirt_GuildTabard_01"},
-  guild_rank_flamebound={id="guild_rank_flamebound",name="Flamebound",desc="Attain the guild rank of Flamebound in Red Lobster Cult.",category="Guild",points=10,icon="Interface\\Icons\\Spell_Fire_Immolation"},
-  guild_rank_oath_captain={id="guild_rank_oath_captain",name="Oath Captain",desc="Attain the guild rank of Oath Captain in Red Lobster Cult.",category="Guild",points=20,icon="Interface\\Icons\\INV_Sword_62"},
-  guild_rank_banner_warden={id="guild_rank_banner_warden",name="Banner Warden",desc="Attain the guild rank of Banner Warden in Red Lobster Cult.",category="Guild",points=35,icon="Interface\\Icons\\INV_BannerPVP_02"},
-  guild_rank_flame_keeper={id="guild_rank_flame_keeper",name="Flame Keeper",desc="Attain the guild rank of Flame Keeper in Red Lobster Cult.",category="Guild",points=50,icon="Interface\\Icons\\Spell_Fire_FireArmor"},
-  guild_rank_flame={id="guild_rank_flame",name="Flame",desc="Attain the guild rank of Flame in Red Lobster Cult.",category="Guild",points=75,icon="Interface\\Icons\\Spell_Fire_Fire"},
+  guild_rank_member_born={id="guild_rank_member_born",name="Krill",desc="Attain the guild rank of Krill in the Red Lobster Cult.",category="Guild",points=5,icon="Interface\\Icons\\INV_Shirt_GuildTabard_01"},
+  guild_rank_flamebound={id="guild_rank_flamebound",name="Blue Lobster",desc="Attain the guild rank of Blue Lobster in the Red Lobster Cult.",category="Guild",points=10,icon="Interface\\Icons\\Spell_Fire_Immolation"},
+  guild_rank_oath_captain={id="guild_rank_oath_captain",name="Crab",desc="Attain the guild rank of Crab in the Red Lobster Cult.",category="Guild",points=20,icon="Interface\\Icons\\INV_Sword_62"},
+  guild_rank_banner_warden={id="guild_rank_banner_warden",name="Lobster Knight",desc="Attain the guild rank of Lobster Knight in the Red Lobster Cult.",category="Guild",points=35,icon="Interface\\Icons\\INV_BannerPVP_02"},
+  guild_rank_flame_keeper={id="guild_rank_flame_keeper",name="Tong Bender",desc="Attain the guild rank of Tong Bender in the Red Lobster Cult.",category="Guild",points=50,icon="Interface\\Icons\\Spell_Fire_FireArmor"},
+  guild_rank_flame={id="guild_rank_flame",name="Leviathan",desc="Attain the guild rank of Leviathan in the Red Lobster Cult.",category="Guild",points=75,icon="Interface\\Icons\\Spell_Fire_Fire"},
   guild_beyoncebee_salute={id="guild_beyoncebee_salute",name="Hail the Cult Leader",desc="Use /salute on Beyoncebee of the Red Lobster Cult.",category="Guild",points=5,icon="Interface\\Icons\\Spell_Fire_Fire"},
   guild_beyoncebee_bow={id="guild_beyoncebee_bow",name="Bow to the Cult Leader",desc="Use /bow on Beyoncebee of the Red Lobster Cult.",category="Guild",points=5,icon="Interface\\Icons\\Spell_Fire_Fire"},
   guild_beyoncebee_honor={id="guild_beyoncebee_honor",name="Honor the Cult Leader",desc="Complete all Beyoncebee emote achievements.",category="Guild",points=10,icon="Interface\\Icons\\Spell_Fire_Fire",criteria_type="ach_meta",criteria_ids={"guild_beyoncebee_salute","guild_beyoncebee_bow"}},
@@ -891,7 +891,7 @@ local SHORT_CHAT_TITLES = {
   title_ashen = "Ashen",
   title_balor_wayfinder = "Balor",
   title_banker = "Banker",
-  title_banner_warden = "Warden",
+  title_banner_warden = "Clawguard",
   title_banshees_hand = "Banshee",
   title_bare_bones = "Barebones",
   title_beastmaster = "Beastmaster",
@@ -938,10 +938,10 @@ local SHORT_CHAT_TITLES = {
   title_explorer = "Explorer",
   title_farstrider = "Farstrider",
   title_firelord = "Firelord",
-  title_flame = "Flame",
-  title_flame_keeper = "Keeper",
+  title_flame = "Abyss",
+  title_flame_keeper = "Forked",
   title_flamebearer = "Flamebearer",
-  title_flamebound = "Bound",
+  title_flamebound = "Azure",
   title_flamewaker = "Cinder",
   title_fortune_builder = "Goldmaker",
   title_four_horsemen = "Horseman",
@@ -970,11 +970,11 @@ local SHORT_CHAT_TITLES = {
   title_master_blacksmith = "Blacksmith",
   title_master_enchanter = "Enchanter",
   title_master_engineer = "Engineer",
-  title_member_born = "Born",
+  title_member_born = "Brine",
   title_molten_destroyer = "Magmaheart",
   title_mountains_heart = "Stoneheart",
   title_northwind_scout = "Northwind",
-  title_oath_captain = "Captain",
+  title_oath_captain = "Pinch",
   title_one_man_army = "Vanguard",
   title_onyxia_bane = "Onybane",
   title_pet_collector = "Handler",
@@ -1033,12 +1033,12 @@ local TITLES = {
   {id="title_elder",name="the Elder",achievement="lvl_60",prefix=false,category="Leveling",icon="Interface\\Icons\\Spell_Holy_BlessingOfStrength"},
 
   -- Guild Rank Titles
-  {id="title_member_born",name="Member: Born",chatName="Born",achievement="guild_rank_member_born",prefix=true,category="Guild",icon="Interface\\Icons\\INV_Shirt_GuildTabard_01",guild=true,desc="A new ember of Red Lobster Cult, beginning their path beneath its flame and oath."},
-  {id="title_flamebound",name="Flamebound",chatName="Bound",achievement="guild_rank_flamebound",prefix=true,category="Guild",icon="Interface\\Icons\\Spell_Fire_Immolation",guild=true,desc="A proven warrior bound to the Banner's flame through loyalty, skill, and battle."},
-  {id="title_oath_captain",name="Oath Captain",chatName="Captain",achievement="guild_rank_oath_captain",prefix=true,category="Guild",icon="Interface\\Icons\\INV_Sword_62",guild=true,desc="Keeper of class discipline and raid readiness, leading their sworn allies by example."},
-  {id="title_banner_warden",name="Banner Warden",chatName="Warden",achievement="guild_rank_banner_warden",prefix=true,category="Guild",icon="Interface\\Icons\\INV_BannerPVP_02",guild=true,desc="Protector of the Banner's order, enforcing standards and supporting the guild's members."},
-  {id="title_flame_keeper",name="Flame Keeper",chatName="Keeper",achievement="guild_rank_flame_keeper",prefix=true,category="Guild",icon="Interface\\Icons\\Spell_Fire_FireArmor",guild=true,desc="Guardian of the Flame's will, helping lead the guild and keep its spirit burning strong."},
-  {id="title_flame",name="Flame",chatName="Flame",achievement="guild_rank_flame",prefix=true,category="Guild",icon="Interface\\Icons\\Spell_Fire_Fire",guild=true,desc="The living spark of the guild, guiding Red Lobster Cult's purpose, direction, and legacy."},
+  {id="title_member_born",name="Krill",chatName="Brine",achievement="guild_rank_member_born",prefix=true,category="Guild",icon="Interface\\Icons\\INV_Shirt_GuildTabard_01",guild=true,desc="A tiny Krill of the Red Lobster Cult, swarming into the depths to serve the great Leviathan."},
+  {id="title_flamebound",name="Blue Lobster",chatName="Azure",achievement="guild_rank_flamebound",prefix=true,category="Guild",icon="Interface\\Icons\\Spell_Fire_Immolation",guild=true,desc="A rare Blue Lobster of the Cult, proven in the shallows and ready for deeper waters."},
+  {id="title_oath_captain",name="Crab",chatName="Pinch",achievement="guild_rank_oath_captain",prefix=true,category="Guild",icon="Interface\\Icons\\INV_Sword_62",guild=true,desc="A Crab of the Red Lobster Cult, hardy and pincered, snapping at any who threaten the boil."},
+  {id="title_banner_warden",name="Lobster Knight",chatName="Clawguard",achievement="guild_rank_banner_warden",prefix=true,category="Guild",icon="Interface\\Icons\\INV_BannerPVP_02",guild=true,desc="A Lobster Knight of the Cult, clad in shell and sworn to claw through the Cult's enemies."},
+  {id="title_flame_keeper",name="Tong Bender",chatName="Forked",achievement="guild_rank_flame_keeper",prefix=true,category="Guild",icon="Interface\\Icons\\Spell_Fire_FireArmor",guild=true,desc="A Tong Bender of the Red Lobster Cult, a twisted veteran who shapes the will of the swarm."},
+  {id="title_flame",name="Leviathan",chatName="Abyss",achievement="guild_rank_flame",prefix=true,category="Guild",icon="Interface\\Icons\\Spell_Fire_Fire",guild=true,desc="The Leviathan of the Red Lobster Cult, the great boiling sea-beast whose hunger guides all lobsters."},
   
   -- Molten Core Titles
   {id="title_firelord",name="Firelord",achievement="raid_mc_ragnaros",prefix=false,category="Raids",icon="Interface\\Icons\\Spell_Fire_LavaSpawn"},
@@ -1258,12 +1258,12 @@ end
 MigrateExistingSelectedTitles()
 
 local TRACKED_GUILD_RANKS = {
-  {rankName="Member: Born", achievement="guild_rank_member_born", title="title_member_born"},
-  {rankName="Flamebound", achievement="guild_rank_flamebound", title="title_flamebound"},
-  {rankName="Oath Captain", achievement="guild_rank_oath_captain", title="title_oath_captain"},
-  {rankName="Banner Warden", achievement="guild_rank_banner_warden", title="title_banner_warden"},
-  {rankName="Flame Keeper", achievement="guild_rank_flame_keeper", title="title_flame_keeper"},
-  {rankName="Flame", achievement="guild_rank_flame", title="title_flame"},
+  {rankName="Krill", achievement="guild_rank_member_born", title="title_member_born"},
+  {rankName="Blue Lobster", achievement="guild_rank_flamebound", title="title_flamebound"},
+  {rankName="Crab", achievement="guild_rank_oath_captain", title="title_oath_captain"},
+  {rankName="Lobster Knight", achievement="guild_rank_banner_warden", title="title_banner_warden"},
+  {rankName="Tong Bender", achievement="guild_rank_flame_keeper", title="title_flame_keeper"},
+  {rankName="Leviathan", achievement="guild_rank_flame", title="title_flame"},
 }
 
 local TRACKED_GUILD_RANK_INDEX = {}
