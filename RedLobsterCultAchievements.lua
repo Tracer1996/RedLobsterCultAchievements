@@ -1,4 +1,4 @@
--- RedLobsterCultAchievements - v3.5 - Existing-title migration
+-- RedLobsterCultAchievements - v3.6 - Guild emote achievements
 -- Guild message: [Title] has earned the achievement [Achievement]
 
 RLC_Achievements = RLC_Achievements or {}
@@ -12,7 +12,7 @@ RLC_Achievements.DEBUG = false -- Set to true for debug messages
 RLC_Achievements.initialized = false -- Set to true after PLAYER_ENTERING_WORLD backlog scan
 
 local ADDON_COMM_PREFIX = "RLCAch"
-local RLCACH_RELEASE_VERSION = "3.5"
+local RLCACH_RELEASE_VERSION = "3.6"
 local VERSION_REMINDER_INTERVAL = 24 * 60 * 60
 local RLCACH_ANNOUNCEMENT_ITEM_ID = 6948
 
@@ -1322,7 +1322,9 @@ local function DetectDirectedEmoteTarget(message)
 
   target = CaptureFirstEmoteTarget(message, {
     "^You salute (.+) with respect%.$",
+    "^You salute (.+) respectfully%.$",
     "^You salute (.+)%.$",
+    "^You salute (.+)$",
   })
   if target then
     action = "salute"
@@ -1331,6 +1333,9 @@ local function DetectDirectedEmoteTarget(message)
       "^You bow before (.+)%.$",
       "^You bow down before (.+)%.$",
       "^You bow to (.+)%.$",
+      "^You bow before (.+)$",
+      "^You bow down before (.+)$",
+      "^You bow to (.+)$",
     })
     if target then
       action = "bow"
@@ -4583,6 +4588,7 @@ function RLC_Achievements.UI:Build()
     {display="Casual",         filter="Casual"},
     {display="Companions",     filter="Companions"},
     {display="Roleplay",       filter="Roleplay"},
+    {display="Guild",          filter="Guild"},
     {display="Kills",          filter="Kills"},
     {display="Identity",       filter="Identity"},
     {display="Reputation",     filter="Reputation"},
@@ -6295,10 +6301,21 @@ local emoteFrame = CreateFrame("Frame")
 emoteFrame:RegisterEvent("CHAT_MSG_TEXT_EMOTE")
 emoteFrame:SetScript("OnEvent", function()
   if event == "CHAT_MSG_TEXT_EMOTE" then
-    -- arg2 is the sender name; only count emotes from the local player
+    -- arg2 is normally the sender name. Some Vanilla/Turtle clients leave it
+    -- blank for the local player's own emote, so also accept the self-message
+    -- form used by the directed achievement parser.
     local senderName = arg2 and smatch(arg2, "^([^%-]+)") or ""
     local me = ShortName(UnitName("player"))
-    if me and ShortName(senderName) == me then
+    local localSender = false
+    if me then
+      local shortSender = ShortName(senderName)
+      if shortSender and shortSender ~= "" and string.lower(shortSender) == string.lower(me) then
+        localSender = true
+      elseif string.find(tostring(arg1 or ""), "^You ") then
+        localSender = true
+      end
+    end
+    if localSender then
       local total = IncrCounter(me, "emotes")
       if total >= 25  then RLC_Achievements:AwardAchievement("casual_emote_25")  end
       if total >= 100 then RLC_Achievements:AwardAchievement("casual_emote_100") end
